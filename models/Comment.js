@@ -15,6 +15,15 @@ Comment.init(
     comment: {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+    user_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    post_id:{
+        type: DataTypes.STRING,
+        allowNull: false,
+
     }
     },
     {

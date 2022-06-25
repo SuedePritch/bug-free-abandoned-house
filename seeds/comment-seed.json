@@ -1,14 +1,22 @@
 [
     {
-        "comment": "this blows"
+        "comment": "this blows",
+        "user_id": 1,
+        "post_id": 3
     },
     {
-        "comment": "this rocks"
+        "comment": "this rocks",
+        "user_id": 1,
+        "post_id": 3
     },
     {
-        "comment": "awesome"
+        "comment": "awesome",
+        "user_id": 1,
+        "post_id": 3
     },
     {
-        "comment": "beautiful"
+        "comment": "beautiful",
+        "user_id": 1,
+        "post_id": 3
     }
 ]
