@@ -1,15 +1,13 @@
 const router = require('express').Router();
 const User = require('../../models/User')
 
-router.get('/', async (req, res) => {
-  try {
-    const allUserData = await User.findAll()
-    res.status(200).json(allUserData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-  
-});
+  router.get('/', async (req, res) => {
+    const userData = await User.findAll().catch((err) => { 
+        res.json(err);
+      });
+        const users = userData.map((user) => user.get({ plain: true }));
+        res.render('homepage', { users });
+      });
 
 
 

@@ -18,7 +18,7 @@ const postData = [
     },
     {
     "title": "Express",
-    "content": "Lorem ipsum",
+    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolorum molestiae nemo, soluta doloribus nisi doloremque sapiente! Eius quibusdam enim hic nam, architecto iusto temporibus?",
     "user_id": 3,
     }
 ];
