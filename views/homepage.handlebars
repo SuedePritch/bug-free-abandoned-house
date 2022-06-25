@@ -1,17 +1,12 @@
-
-
-
-
-<body>
-  
-  {{!-- {{#each users as |user|}}
-      <div class='user col-md-5'>
-        <p>
-          {{user.id}}.
-          {{user.username}}
-        </p>
-      </div>
-    {{/each}} --}}
+    {{!-- <div class="card-container">
+    {{#each users as |user|}}
+        <div class='card'>
+          <p>
+            {{user.username}}
+          </p>
+        </div>
+      {{/each}}
+  </div>
       <div class='card-container'>
   {{#each posts as |post|}}
         <div class="card">
@@ -19,7 +14,7 @@
             <p class="content">{{post.content}}</p>
         </div>
     {{/each}}
-      </div>
+      </div> --}}
   {{!-- {{#each comments as |comment|}}
       <div class='comment col-md-5'>
         <p>
@@ -28,5 +23,10 @@
         </p>
       </div>
     {{/each}} --}}
-  
-</body>
+    <div>
+      <form class="login">
+        <input type="email" id="emailInput" placeholder="EMAIL">
+        <input type="password" id="passwordInput" placeholder="PASSWORD">
+        <button type="submit" value="submit">LOGIN</button>
+      </form>
+    </div>    

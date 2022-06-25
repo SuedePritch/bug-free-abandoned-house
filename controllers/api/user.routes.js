@@ -8,9 +8,11 @@ router.get('/', async (req, res) => {
       res.json(err);
     });
       const users = userData.map((user) => user.get({ plain: true }));
-      res.status(200).json(userData)
+      // res.status(200).json(userData)
       res.render('homepage', { users });
     });
+
+
 
 //USER SIGNUP
 router.post('/signup', async (req, res) => {
@@ -20,6 +22,7 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
+    res.status(200).json(signupData)
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -34,7 +37,7 @@ router.post('/login', async (req, res) => {
     const loginAttempt = await User.findOne({ where: { email: req.body.email } });
     if (!loginAttempt) {
 
-      res.status(404).json({ message: 'Thats not working! Please try again!' });
+      res.status(404).json({ message: 'Login failed!' });
       return;
     }
     console.log(req.body.password);
@@ -44,7 +47,7 @@ router.post('/login', async (req, res) => {
       loginAttempt.password
     );
     if (!validPassword) {
-      res.status(400).json({ message: 'Login failed. Please try again!' });
+      res.status(400).json({ message: 'Login failed!' });
       return;
     }
     res.status(200).json({ message: 'You are now logged in!' });
@@ -52,6 +55,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
     
 
 
