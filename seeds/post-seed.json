@@ -1,0 +1,23 @@
+[
+    {
+    "post_title": "NodeJS",
+    "post_content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, porro!",
+    "created_by": "James",
+    "created_at": "Jan 1 2020"
+    },
+    {
+    "post_title": "Javascript",
+    "post_content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, porro!",
+    "created_by": "Mike"
+    },
+    {
+    "post_title": "MERN",
+    "post_content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, porro!",
+    "created_by": "Sally"
+    },
+    {
+    "post_title": "Express",
+    "post_content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, porro!",
+    "created_by": "Tim"
+    }
+]
