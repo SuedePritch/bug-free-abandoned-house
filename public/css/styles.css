@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* NAV LINKS */
 .navlinks{
     background: hsl(0, 100%, 50%);
     display: flex;
@@ -14,6 +14,26 @@
 .navlinks > *{
     padding: 1rem 1.75rem;
 }
+
+/* LOGIN FORM */
+#form{
+    display: flex;
+    justify-content: center;
+}
+.form{
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    width:60vw;
+}
+.form > *{
+    margin: 1rem;
+    padding:1rem;
+}
+
+
+
+/* POST STYLING */
 .card-container{
     display: grid;
     grid-template-columns: repeat(1, 1fr);

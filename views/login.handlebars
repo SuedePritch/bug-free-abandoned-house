@@ -1,4 +1,14 @@
-async function loginForm(event) {
+<div id="form">
+    <form class="form" id="login">
+        <input type="email" id="emailInput" placeholder="EMAIL">
+        <input type="password" id="passwordInput" placeholder="PASSWORD">
+        <button type="submit" value="submit">LOGIN</button>
+        <a href="/signup">SIGN UP</a>
+    </form>
+</div> 
+
+<script>
+    async function loginForm(event) {
     event.preventDefault();
     const emailInput = document.getElementById('emailInput').value;
     const passwordInput = document.getElementById('passwordInput').value;
@@ -13,9 +23,11 @@ async function loginForm(event) {
     },
 });
     if (response.ok) {
-    alert('logged in');
+    document.location.replace('/')
     } else {
     alert('login failed');
     }
 }
 document.querySelector('#login').addEventListener('submit', loginForm);
+</script>
+

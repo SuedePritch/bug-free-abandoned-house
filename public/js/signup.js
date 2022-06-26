@@ -1,10 +1,12 @@
-async function loginForm(event) {
+async function signupForm(event) {
     event.preventDefault();
+    const usernameInput = document.getElementById('usernameInput').value;
     const emailInput = document.getElementById('emailInput').value;
     const passwordInput = document.getElementById('passwordInput').value;
-    const response = await fetch(`/api/user/login`, {
+    const response = await fetch(`/api/user/signup`, {
     method: 'POST',
     body: JSON.stringify({
+        username: usernameInput,
         email: emailInput,
         password: passwordInput
     }),
@@ -13,9 +15,9 @@ async function loginForm(event) {
     },
 });
     if (response.ok) {
-    alert('logged in');
+    console.log('signup');
     } else {
-    alert('login failed');
+    alert('signup failed');
     }
 }
-document.querySelector('#login').addEventListener('submit', loginForm);
+document.querySelector('#signup').addEventListener('submit', signupForm);

@@ -22,7 +22,7 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    res.status(200).json(signupData)
+    res.status(200).json('logged in')
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Login failed!' });
       return;
     }
-    res.status(200).json({ message: 'You are now logged in!' });
+    res.status(200).json('Logged In')
   } catch (err) {
     res.status(500).json(err);
   }
