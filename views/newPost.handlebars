@@ -1,0 +1,35 @@
+<div id="form">
+    <form class="form" id="new-post">
+        <input type="text" id="titleInput" placeholder="TITLE">
+        <input type="text" id="contentInput" placeholder="DESCRIPTION">
+        <input type="text" id="userIdInput" placeholder="user id">
+        <button type="submit" value="submit" >POST</button>
+    </form>
+</div> 
+
+
+<script>
+    async function newPostForm(event) {
+    event.preventDefault();
+    const titleInput = document.getElementById('titleInput').value;
+    const contentInput = document.getElementById('contentInput').value;
+    const userIdInput = document.getElementById('userIdInput').value;
+    const response = await fetch(`/api/post`, {
+    method: 'POST',
+    body: JSON.stringify({
+        title: titleInput,
+        content: contentInput,
+        user_id: userIdInput,
+    }),
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+    if (response.ok) {
+    console.log('post created');
+    } else {
+    alert('post failed');
+    }
+}
+document.querySelector('#new-post').addEventListener('submit', newPostForm);
+</script>
