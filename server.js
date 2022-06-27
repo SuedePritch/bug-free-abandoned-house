@@ -12,10 +12,9 @@ const sequelize = require('./config/connection');
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 3600,
+    maxAge: 86400,
     httpOnly: true,
-    secure: false,
-    sameSite: 'strict',
+    secure: false
   
   },
   resave: false,

@@ -52,9 +52,10 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Login failed!' });
       return;
     }
-    
+  
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userId = loginAttempt.id
 
       res
         .status(200)
