@@ -2,26 +2,29 @@
 
 {{!-- <div class="card-container">
     {{#each users as |user|}}
-        <div class='card'>
-          <p>
-            {{user.username}}
-          </p>
-        </div>
-      {{/each}}
-  </div>
-      <div class='card-container'>
-        {{#each posts as |post|}}
-        <div class="card">
-            <h3 class="title">{{post.title}}</h3>
-            <p class="content">{{post.content}}</p>
-        </div>
-        {{/each}}
-      </div>
-  {{#each comments as |comment|}}
-      <div class='comment col-md-5'>
+      <div class='card'>
         <p>
-          {{comment.id}}.
-          {{comment.comment}}
+          {{user.username}}
         </p>
       </div>
-    {{/each}} --}}
+    {{/each}}
+</div> --}}
+
+<div class='card-container'>
+  {{#each posts as |post|}}
+  <div class="card">
+      <h3 class="title">{{post.title}}</h3>
+      <p class="content">{{post.content}}</p>
+  </div>
+  {{/each}}
+</div>
+
+
+{{!-- {{#each comments as |comment|}}
+    <div class='comment col-md-5'>
+      <p>
+        {{comment.id}}.
+        {{comment.comment}}
+      </p>
+    </div>
+  {{/each}} --}}
