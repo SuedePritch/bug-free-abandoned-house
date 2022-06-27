@@ -1,6 +1,9 @@
 <div class='card-container'>
     <div class="card">
-        <h3 class="title">{{singlePost.title}}</h3>
+        <div class="title">{{singlePost.title}}
+        <p>{{singlePost.user.username}}</p>
+        <p class="date">{{format_date singlePost.updatedAt}}</p>
+        </div>
         <p class="content" >{{singlePost.content}}</p>
     </div>
 </div>

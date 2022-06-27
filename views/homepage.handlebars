@@ -4,8 +4,9 @@
   {{#each posts as |post|}}
   <a class="card" href="/singlepost/{{post.id}}">
       <div class="title" id={{post.id}} >{{post.title}}
-
+      <p>{{post.user.username}}</p>  
       <p class="date">{{format_date post.updatedAt}}</p>
+
       </div>
       <p class="content"  id={{post.id}} >{{post.content}}</p>
   </a>
