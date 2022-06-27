@@ -3,19 +3,19 @@ async function loginForm(event) {
     const emailInput = document.getElementById('emailInput').value;
     const passwordInput = document.getElementById('passwordInput').value;
     const response = await fetch(`/api/user/login`, {
-    method: 'POST',
-    body: JSON.stringify({
-        email: emailInput,
-        password: passwordInput
-    }),
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
-    if (response.ok) {
-    document.location.replace('/')
-    } else {
-    alert('login failed');
-    }
+        method: 'POST',
+        body: JSON.stringify({
+            email: emailInput,
+            password: passwordInput
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+        if (response.ok) {
+        document.location.replace('/')
+        } else {
+        alert('login failed');
+        }
 }
 document.querySelector('#login').addEventListener('submit', loginForm);

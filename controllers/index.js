@@ -14,5 +14,15 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {res.render('login');});
 router.get('/signup', async (req, res) => {res.render('signup');});
 router.get('/newpost', async (req, res) => {res.render('newPost');});
+router.get('/singlepost/:id', async (req, res) => {
+    try {
+        const singlePostData = await Post.findByPk(
+        req.params.id)
+        const singlePost = singlePostData.get({plain:true})
+        res.render('singlepost', { singlePost })
+        } catch (err) {
+        res.status(500).json(err);
+        }
+});
 
 module.exports = router;
