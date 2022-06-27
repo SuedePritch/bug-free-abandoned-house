@@ -5,5 +5,8 @@
         <p class="date">{{format_date singlePost.updatedAt}}</p>
         </div>
         <p class="content" >{{singlePost.content}}</p>
+        {{#singlePost.comments}}
+        <p>{{comment}}</p>
+        {{/singlePost.comments}}
     </div>
 </div>
