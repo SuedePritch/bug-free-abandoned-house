@@ -13,7 +13,7 @@ async function loginForm(event) {
     },
 });
     if (response.ok) {
-    alert('logged in');
+    document.location.replace('/')
     } else {
     alert('login failed');
     }
