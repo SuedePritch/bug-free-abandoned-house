@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
             loggedIn: req.session.loggedIn
         });
     });
+
 router.get('/login', async (req, res) => {res.render('login');});
 router.get('/signup', async (req, res) => {res.render('signup');});
 router.get('/newpost', withAuth, async (req, res) => {res.render('newPost');});

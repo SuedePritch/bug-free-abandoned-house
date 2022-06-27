@@ -10,12 +10,12 @@
       <div class="logo"></div>
       <div class="navlinks">
           <a href="/">Home</a>
+          {{#if loggedIn}}
           <div>Dashboard</div>
-{{#if loggedIn}}
-<a href="/logout">Logout</a>
-{{else}}
-<a href="/login">Login/Sign Up</a>
-{{/if}}
+          <button id="logout">Logout</button>
+          {{else}}
+          <a href="/login">Login/Sign Up</a>
+          {{/if}}
       </div>
     </nav>
       <main>
@@ -23,4 +23,10 @@
       </main>
   </div>
   </body>
+  {{!-- This is done to remove script when logout button is hidden to
+  fix console error regarding the addEventlistener--}}
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{else}}
+  {{/if}}
 </html>
