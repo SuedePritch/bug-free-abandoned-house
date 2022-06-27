@@ -22,7 +22,11 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    res.status(200).json('logged in')
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json(signupData);
+    });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -48,7 +52,14 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Login failed!' });
       return;
     }
-    res.status(200).json('Logged In')
+    
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res
+        .status(200)
+        .json({ user: loginAttempt, message: 'You are now logged in!' });
+    });
   } catch (err) {
     res.status(500).json(err);
   }

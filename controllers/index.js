@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Post = require('../models/Post')
+const withAuth = require('../utils/auth')
 
 const apiRoutes = require('./api');
 router.use('/api', apiRoutes);
@@ -13,8 +14,8 @@ router.get('/', async (req, res) => {
     });
 router.get('/login', async (req, res) => {res.render('login');});
 router.get('/signup', async (req, res) => {res.render('signup');});
-router.get('/newpost', async (req, res) => {res.render('newPost');});
-router.get('/singlepost/:id', async (req, res) => {
+router.get('/newpost', withAuth, async (req, res) => {res.render('newPost');});
+router.get('/singlepost/:id',withAuth, async (req, res) => {
     try {
         const singlePostData = await Post.findByPk(
         req.params.id)
