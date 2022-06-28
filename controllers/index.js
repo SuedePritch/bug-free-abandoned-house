@@ -29,6 +29,7 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {res.render('login');});
 router.get('/signup', async (req, res) => {res.render('signup');});
 router.get('/newpost', withAuth, async (req, res) => {res.render('newPost');});
+router.get('/newcomment', withAuth, async (req, res) => {res.render('newComment');});
 router.get('/singlepost/:id', withAuth, async (req, res) => {
     try {
         const singlePostData = await Post.findByPk(req.params.id,

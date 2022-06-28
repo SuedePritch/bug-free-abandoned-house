@@ -6,7 +6,16 @@
         </div>
         <p class="content" >{{singlePost.content}}</p>
         {{#singlePost.comments}}
-        <p>{{comment}}{{user.username}}</p>
+        <h4>{{comment}}</h4>
+        <div>{{user.username}}</div>
         {{/singlePost.comments}}
+        <div id="form">
+            <form class="form" id="new-comment">
+                <textarea type="text" id="commentInput" placeholder="COMMENT"></textarea>
+                <button type="submit" value="submit" >Add Comment</button>
+            </form>
+        </div> 
     </div>
 </div>
+
+<script src="/js/singlepost.js"></script>
