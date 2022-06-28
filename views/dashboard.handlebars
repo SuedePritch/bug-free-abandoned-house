@@ -1,0 +1,16 @@
+<a href="/newpost">
+<h2>New Post</h2>
+</a>
+
+<div class='card-container  single-post'>
+    {{#each allUsersPosts as |allUsersPost|}}
+    <a class="card" href="/singlepost/{{allUsersPost.id}}">
+        <div class="title" id={{allUsersPost.id}} >{{allUsersPost.title}}
+        <p>{{allUsersPost.user.username}}</p>  
+        <p class="date">{{format_date allUsersPost.updatedAt}}</p>
+
+        </div>
+        <p class="content"  id={{allUsersPost.id}} >{{allUsersPost.content}}</p>
+    </a>
+    {{/each}}
+</div>

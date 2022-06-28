@@ -5,6 +5,12 @@ const withAuth = require('../utils/auth')
 const apiRoutes = require('./api');
 router.use('/api', apiRoutes);
 
+router.get('/login', async (req, res) => {res.render('login');});
+router.get('/logout', async (req, res) => {res.render('homepage');});
+router.get('/signup', async (req, res) => {res.render('signup');});
+router.get('/newpost', withAuth, async (req, res) => {res.render('newPost');});
+router.get('/newcomment', withAuth, async (req, res) => {res.render('newComment');});
+
 router.get('/', async (req, res) => {
     const postData = await Post.findAll({
         include: [    
@@ -25,17 +31,12 @@ router.get('/', async (req, res) => {
             loggedIn: req.session.loggedIn
         });
     });
-
-router.get('/login', async (req, res) => {res.render('login');});
-router.get('/logout', async (req, res) => {res.render('homepage');});
-router.get('/signup', async (req, res) => {res.render('signup');});
-router.get('/newpost', withAuth, async (req, res) => {res.render('newPost');});
-router.get('/newcomment', withAuth, async (req, res) => {res.render('newComment');});
-router.get('/singlepost/:id', withAuth, async (req, res) => {
-    try {
+    
+    router.get('/singlepost/:id', withAuth, async (req, res) => {
+        try {
         const singlePostData = await Post.findByPk(req.params.id,
         {
-        include: [{   
+            include: [{   
             model: User,
             attributes: ['username'], 
         },
@@ -56,6 +57,29 @@ router.get('/singlepost/:id', withAuth, async (req, res) => {
         } catch (err) {
         res.status(500).json(err);
         }
-});
+    });
+    
 
-module.exports = router;
+
+    router.get('/dashboard', withAuth, async (req, res) => {
+        try {
+        const allUserPostsData = await Post.findAll({
+            where:{
+                user_id: req.session.userId
+            }
+        })
+        
+        const allUsersPosts = allUserPostsData.map((post) => post.get({ plain: true }));
+        res.render('dashboard', {
+            allUsersPosts,
+            loggedIn: req.session.loggedIn
+        })
+        } catch (err) {
+        res.status(500).json(err);
+        }
+    });
+
+
+
+
+    module.exports = router;
