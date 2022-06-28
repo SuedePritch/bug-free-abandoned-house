@@ -39,7 +39,11 @@ router.get('/singlepost/:id', withAuth, async (req, res) => {
         },
         {   
             model: Comment,
-            attributes: ['user_id', 'comment'], 
+            include: [{   
+                model: User,
+                attributes: ['username'], 
+            }],
+            attributes: ['comment'], 
         },
     ]})
         const singlePost = singlePostData.get({plain:true})
