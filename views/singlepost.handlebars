@@ -9,13 +9,16 @@
         {{#singlePost.comments}}
         <h4>{{comment}}</h4>
         <div>{{user.username}}</div>
+        <div>{{format_date created_at}}</div>
         {{/singlePost.comments}}
+        {{#if loggedIn}}
         <div id="form">
             <form class="form" id="new-comment">
                 <textarea type="text" id="commentInput" placeholder="COMMENT"></textarea>
                 <button type="submit" value="submit" >Add Comment</button>
             </form>
         </div> 
+        {{/if}}
     </div>
 </div>
 

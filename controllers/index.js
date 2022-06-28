@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
         });
     });
     
-router.get('/singlepost/:id', withAuth, async (req, res) => {
+router.get('/singlepost/:id', async (req, res) => {
     try {
     const singlePostData = await Post.findByPk(req.params.id,
     {
@@ -46,7 +46,7 @@ router.get('/singlepost/:id', withAuth, async (req, res) => {
             model: User,
             attributes: ['username'], 
         }],
-        attributes: ['comment'], 
+        attributes: ['comment', 'created_at'], 
     },
 ]})
     const singlePost = singlePostData.get({plain:true})
