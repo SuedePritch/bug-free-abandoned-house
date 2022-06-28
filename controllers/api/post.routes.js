@@ -42,5 +42,23 @@ router.post('/', async (req, res) => {
   }
 });
 
+// EDIT POST
+router.put('/:id', async (req, res) => {
+  try {
+    const editPostData = await Post.update({ 
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.session.userId,
+    },
+    {
+      where: {id: req.params.id },
+    });
+    res.status(200).json('post updated')
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
 
 module.exports = router;

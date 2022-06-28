@@ -5,12 +5,16 @@
 <div class='card-container  single-post'>
     {{#each allUsersPosts as |allUsersPost|}}
     <a class="card" href="/singlepost/{{allUsersPost.id}}">
-        <div class="title" id={{allUsersPost.id}} >{{allUsersPost.title}}
-        <p>{{allUsersPost.user.username}}</p>  
+        <div class="title">{{allUsersPost.title}}
+        <p>{{allUsersPost.username}}</p>  
         <p class="date">{{format_date allUsersPost.updatedAt}}</p>
-
         </div>
-        <p class="content"  id={{allUsersPost.id}} >{{allUsersPost.content}}</p>
+        <p class="content">{{allUsersPost.content}}</p>
     </a>
+            <div>
+                <button class="edit-button" id={{allUsersPost.id}}>Edit</button>
+                <button class="delete-button" id={{allUsersPost.id}}>Delete</button>
+            </div>
     {{/each}}
 </div>
+<script src="/js/dashboard.js"></script>
