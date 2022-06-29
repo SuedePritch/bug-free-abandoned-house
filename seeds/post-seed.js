@@ -12,7 +12,7 @@ const postData = [
     "user_id": 2,
     },
     {
-    "title": "9 Amazing Computer Inventions from the Past Decade",
+    "title": "Inventions from the Past Decade",
     "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam pariatur, voluptatem id, iste, molestias molestiae eveniet aspernatur eaque enim vel ipsum hic nemo cupiditate rerum vero quod nulla eligendi. Expedita, velit. Ipsam veritatis.",
     "user_id": 3,
     },
