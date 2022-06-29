@@ -91,6 +91,7 @@ a{
     padding-bottom: 3rem;
     color: var(--clr-primary-0);
 }
+#signup-button,
 #title-text{
     color: var(--clr-primary-0);
 }
@@ -115,6 +116,23 @@ a{
     display: flex;
     justify-content: center;
     color: var(--clr-primary-0);
+}
+
+#edit-delete-buttons{
+    margin:0.75rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#edit-delete-buttons > *{
+    margin:0.25rem;
+    background: none;
+    height:50%;
+    width:50%;
+    min-width: 200px;
+    border:none;
+    box-shadow: 0 0 3px 1px var(--clr-primary-0);
 }
 
 .comment-container{
