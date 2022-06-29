@@ -1,13 +1,15 @@
-<a href="/newpost">
-<h2>New Post</h2>
-</a>
+<div id="new-post-button-container">
+    <a id='new-post-button'href="/newpost">New Post</a>
+</div>
+
 
 <div class='card-container  single-post'>
     {{#each allUsersPosts as |allUsersPost|}}
     <a class="card" href="/singlepost/{{allUsersPost.id}}">
-        <div class="title">{{allUsersPost.title}}
-        <p>{{allUsersPost.username}}</p>  
-        <p class="date">{{format_date allUsersPost.updatedAt}}</p>
+        <div class="title">
+            <p id="title-text">{{allUsersPost.title}}</p>
+            <p id="username-text">{{allUsersPost.username}}</p>  
+            <p class="date">{{format_date allUsersPost.updatedAt}}</p>
         </div>
         <p class="content">{{allUsersPost.content}}</p>
     </a>

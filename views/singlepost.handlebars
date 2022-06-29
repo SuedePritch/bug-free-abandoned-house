@@ -1,25 +1,29 @@
 <div class='card-container'>
     <div class="card">
         
-        <div class="title">{{singlePost.title}}
-        <p>{{singlePost.user.username}}</p>
-        <p class="date">{{format_date singlePost.updatedAt}}</p>
+        <div class="title">
+            <p id="title-text">{{singlePost.title}}</p>
+            <p id="username-text">{{singlePost.user.username}}</p>
+            <p class="date">{{format_date singlePost.updatedAt}}</p>
         </div>
         <p class="content" >{{singlePost.content}}</p>
         {{#singlePost.comments}}
-        <h4>{{comment}}</h4>
-        <div>{{user.username}}</div>
-        <div>{{format_date created_at}}</div>
+        <div class="comment-container">
+            <div class="comment">{{comment}}</div>
+            <div>{{user.username}}</div>
+            <div>{{format_date created_at}}</div>
+        </div>
         {{/singlePost.comments}}
         {{#if loggedIn}}
         <div id="form">
             <form class="form" id="new-comment">
-                <textarea type="text" id="commentInput" placeholder="COMMENT"></textarea>
+                <input type="text" id="commentInput" placeholder="COMMENT">
                 <button type="submit" value="submit" >Add Comment</button>
             </form>
         </div> 
         {{/if}}
     </div>
 </div>
-
+{{#if loggedIn}}
 <script src="/js/singlepost.js"></script>
+{{/if}}

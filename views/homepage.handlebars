@@ -1,8 +1,9 @@
 <div class='card-container  single-post'>
   {{#each posts as |post|}}
   <a class="card" href="/singlepost/{{post.id}}">
-      <div class="title" id={{post.id}} >{{post.title}}
-      <p>{{post.user.username}}</p>  
+      <div class="title" id={{post.id}}>
+        <p id="title-text">{{post.title}}</p>
+      <p id="username-text">{{post.user.username}}</p>  
       <p class="date">{{format_date post.updatedAt}}</p>
 
       </div>
